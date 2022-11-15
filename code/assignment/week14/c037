@@ -1,0 +1,18 @@
+#include<stdio.h>
+int ipt,ans;
+int num[107],cnt;
+int main(){
+  scanf("%d",&ipt);
+  ans=ipt*3; printf("%d ",ans);
+  while(ans){
+    ++cnt; num[ans%10]++;
+    ans/=10;
+  }
+  for(int i=9;i>=0;i--){
+    while(num[i]){
+      num[i]--;
+      printf("%c",'0'+i);
+    }
+  }
+  return 0;
+}
